@@ -4,8 +4,8 @@ services:
     image: registry.gitlab.com/bockiii/deemix-docker
     container_name: Deemix
     volumes:
-      - /Music:/downloads
-      - /Docker/deemix:/config
+      - /music:/downloads
+      - /docker/deemix:/config
     environment:
       - PUID=1000
       - PGID=1000
@@ -19,8 +19,8 @@ services:
   navidrome: #For viewing and listening to music.
     container_name: navidrome
     volumes:
-      - /Music:/music
-      - /Docker/navidrome:/data
+      - /music:/music
+      - /docker/navidrome:/data
     ports:
       - 4533:4533
     environment:
@@ -34,8 +34,8 @@ services:
     environment:
       - FB_BASEURL=/f
     volumes:
-      - /Music:/data
-      - /Docker/filebrowser:/config
+      - /music:/data
+      - /docker/filebrowser:/config
     ports:
       - 8081:8080
     restart: always
